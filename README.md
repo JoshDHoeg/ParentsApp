@@ -13,3 +13,9 @@
 1) npm install
 2) npm start
 # View the front end either using EXPO or through the simulators
+
+
+#Push updates to the repo
+1) git add .
+2) git commit -m "your message"
+3) git push
