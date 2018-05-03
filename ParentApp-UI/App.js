@@ -7,7 +7,7 @@ const SERVER_URL = 'ws://localhost:3000/websocket';
 
 class App extends React.Component {
   componentWillMount() {
-    Meteor.connect(SERVER_URL);  
+    Meteor.connect(SERVER_URL);
   }
 
   render() {
@@ -19,9 +19,9 @@ class App extends React.Component {
 
 
 export default createContainer((props) => {
-  
-  Meteor.subscribe('items');
+
+  Meteor.subscribe('families');
   return {
-    count: Meteor.collection('items').find().length,
+    count: Meteor.collection('families').find().length,
   };
 }, App);

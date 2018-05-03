@@ -6,16 +6,16 @@ import Meteor from 'react-native-meteor';
 export default class Family extends React.Component {
   handleAddItem() {
     const name = Math.floor(Math.random() * 10); // just generate some random number
-    Meteor.call('Items.addOne', { name }, (err, res) => {
+    Meteor.call('Families.addOne', { name }, (err, res) => {
       // Do whatever you want with the response
-      console.log('Items.addOne', err, res);
+      console.log('Families.addOne', err, res);
     });
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>Fuck there are { this.props.count } items</Text>
+        <Text>Fuck there are { this.props.count } Families</Text>
         <TouchableOpacity style={styles.button} onPress={this.handleAddItem}>
           <Text>Add Item</Text>
         </TouchableOpacity>
