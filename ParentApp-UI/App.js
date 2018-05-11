@@ -12,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Family count={ this.props.count } />
+      <Family families={ this.props.count } />
     );
   }
 }
@@ -22,6 +22,7 @@ export default createContainer((props) => {
 
   Meteor.subscribe('families');
   return {
-    count: Meteor.collection('families').find().length,
+    families: Meteor.collection('families').find(),
   };
+
 }, App);
