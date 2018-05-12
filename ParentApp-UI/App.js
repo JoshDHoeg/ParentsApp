@@ -20,9 +20,12 @@ class App extends React.Component {
 
 export default createContainer((props) => {
 
-  Meteor.subscribe('families');
+  const subscription = Meteor.subscribe('families');
+  const familiesCollection = Meteor.collection('families');
+
+
   return {
-    families: Meteor.collection('families').find(),
+    families: familiesCollection.find(),
   };
 
 }, App);
