@@ -12,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Family families={ this.props.count } />
+      <Family families={ this.props.families } />
     );
   }
 }

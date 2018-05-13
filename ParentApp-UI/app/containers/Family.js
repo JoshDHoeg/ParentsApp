@@ -11,10 +11,9 @@ export default class Family extends React.Component {
   }
 
   handleAddItem() {
-    const name = Math.floor(Math.random() * 10); // just generate some random number
-    Meteor.call('Families.addOne', this.state.name, (err, res) => {
+    const name = this.state.name;
+    Meteor.call('Families.addOne', { name }, (err, res) => {
       // Do whatever you want with the response
-      console.log(this.state.name);
       console.log('Families.addOne', err, res);
     });
   }
@@ -29,7 +28,7 @@ export default class Family extends React.Component {
           onChangeText={(name) => this.setState({name})}
         />
         <TouchableOpacity style={styles.button} onPress={this.handleAddItem}>
-          <Text>{this.state.name}</Text>
+          <Text>Add Family</Text>
         </TouchableOpacity>
       </View>
     );
