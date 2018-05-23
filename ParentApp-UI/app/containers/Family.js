@@ -11,8 +11,8 @@ export default class Family extends React.Component {
   }
 
   handleAddItem() {
-    const name = this.state.name;
-    Meteor.call('Families.addOne', { name }, (err, res) => {
+    const lastName = this.state.name;
+    Meteor.call('Families.addOne', { lastName }, (err, res) => {
       // Do whatever you want with the response
       console.log('Families.addOne', err, res);
     });
